@@ -13,7 +13,7 @@ useEffect(()=>{
             <img  className="w3-image w3-circle" src={bot.avatar_url} alt ="bot" style={{width:'45%'}}/>
             <div className="w3-container w3-centre">
                 <p>{bot.name}</p>
-                <button>Add to Army</button>
+                <button onClick={()=>handleAdd}>Add to Army</button>
             </div>
             </div> 
             </div>
@@ -23,8 +23,13 @@ useEffect(()=>{
 },[data])
 
 
-   
+   function handleAdd(e) {
+    e.preventDefault();
+    
+   }
         
+
+
 
     return (
         <>
