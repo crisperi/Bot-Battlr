@@ -1,6 +1,8 @@
-
+import { useState } from "react"
 
 export default function Bot({data}){
+
+const [bots,setBots]=useState([])
 
 
 
@@ -16,10 +18,11 @@ export default function Bot({data}){
             </div>
         )
         })
+        setBots((bots)= [...mapped])
 
     return (
         <>
-       {mapped}
+       {bots}
         </>
     )
 }
