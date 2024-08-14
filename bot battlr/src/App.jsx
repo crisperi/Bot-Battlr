@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 
-
-import Bots from "./components/bots"
+import Army from './components/Army';
+import BotCollection from "./components/BotCollection"
 
 
 
@@ -23,7 +23,8 @@ function App() {
 
   return (
     <>
-    <Bots data={data}/>
+    <Army/>
+    <BotCollection data={data}/>
     </>
   )
 }

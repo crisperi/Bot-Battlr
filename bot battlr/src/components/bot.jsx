@@ -1,10 +1,10 @@
-import { useState } from "react"
+import { useState ,useEffect} from "react"
 
 export default function Bot({data}){
 
 const [bots,setBots]=useState([])
 
-
+useEffect(()=>{
 
     const mapped =data.map((bot)=>{
         return(
@@ -13,12 +13,18 @@ const [bots,setBots]=useState([])
             <img  className="w3-image w3-circle" src={bot.avatar_url} alt ="bot" style={{width:'45%'}}/>
             <div className="w3-container w3-centre">
                 <p>{bot.name}</p>
+                <button>Add to Army</button>
             </div>
             </div> 
             </div>
         )
         })
-        setBots((bots)= [...mapped])
+        setBots([mapped])
+},[data])
+
+
+   
+        
 
     return (
         <>
