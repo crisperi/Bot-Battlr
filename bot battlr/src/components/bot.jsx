@@ -20,8 +20,9 @@ export default function Bot({ data }) {
     }
   }
 
-  const removeBot = (armyId) => {
-    setArmy(prevArmy => prevArmy.filter(bot => bot.id !== armyId));
+  //receive botId from child to remove from army 
+  const removeBot = (botId) => {
+    setArmy(prevArmy => prevArmy.filter(bot => bot.id !== botId));
   };
 
 // Render the list of bots and the army
