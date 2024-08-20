@@ -1,8 +1,11 @@
 import { useState ,useEffect} from "react"
+import Army from './Army';
 
 export default function Bot({data}){
 
-const [bots,setBots]=useState([])
+const [bots,setBots]=useState([]);
+const [army,setArmy]=useState([]);
+
 
 useEffect(()=>{
 
@@ -13,7 +16,7 @@ useEffect(()=>{
             <img  className="w3-image w3-circle" src={bot.avatar_url} alt ="bot" style={{width:'45%'}}/>
             <div className="w3-container w3-centre">
                 <p>{bot.name}</p>
-                <button onClick={()=>handleAdd}>Add to Army</button>
+                <button onClick={(e)=>handleAdd(e,bot.id)}>Add to Army</button>
             </div>
             </div> 
             </div>
@@ -22,10 +25,13 @@ useEffect(()=>{
         setBots([mapped])
 },[data])
 
-
-   function handleAdd(e) {
-    e.preventDefault();
+   function handleAdd(e,botId) {
+    e.preventDefault ;
+    console.log(botId)
     
+
+
+
    }
         
 
@@ -33,6 +39,7 @@ useEffect(()=>{
 
     return (
         <>
+        <Army  />
        {bots}
         </>
     )

@@ -1,6 +1,9 @@
 import Bot from './bot'
 
+
 export default function Bots({data}) {
+
+
 
 
     return (
