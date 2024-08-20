@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Army from './Army';
 
-export default function Bot({ data }) {
+export default function Bot({ data,onDischarge }) {
   const [army, setArmy] = useState([]);
 
 // Function to add a bot to your army
@@ -25,6 +25,12 @@ export default function Bot({ data }) {
     setArmy(prevArmy => prevArmy.filter(bot => bot.id !== botId));
   };
 
+  function handleDischarge(botId) {
+   onDischarge(botId)
+  }
+
+
+
 // Render the list of bots and the army
   return (
     <>
@@ -35,7 +41,9 @@ export default function Bot({ data }) {
             <img className="w3-image w3-circle" src={bot.avatar_url} alt="bot" style={{ width: '45%' }}/>
             <div className="w3-container w3-center">
               <p className="w3-large">{bot.name}</p>
+              <button className="w3-red w3-btn" onClick={()=>handleDischarge(bot.id)}>X</button>
               <button className="w3-btn w3-green" onClick={(e) => handleAdd(e, bot.id)}>Add to Army</button>
+
             </div>
           </div>
         </div>
