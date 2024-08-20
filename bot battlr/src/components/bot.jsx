@@ -27,19 +27,23 @@ useEffect(()=>{
 
    function handleAdd(e,botId) {
     e.preventDefault ;
-    console.log(botId)
-    
+   
+    const addBot = data.find(bot => bot.id === botId)
+console.log(addBot)
+    setArmy(prevArmy=>[...prevArmy,addBot])
 
+ 
 
 
    }
         
-
+   console.log(army)
+   
 
 
     return (
         <>
-        <Army  />
+        <Army army={army} />
        {bots}
         </>
     )
