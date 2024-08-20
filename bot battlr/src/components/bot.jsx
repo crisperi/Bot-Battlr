@@ -6,7 +6,7 @@ export default function Bot({data}){
 const [bots,setBots]=useState([]);
 const [army,setArmy]=useState([]);
 
-
+//MAP OVER RECEIVED DATA TO DISPLAY ALL THE BOTS 
 useEffect(()=>{
 
     const mapped =data.map((bot)=>{
@@ -23,8 +23,12 @@ useEffect(()=>{
         )
         })
         setBots([mapped])
-},[data])
+},
+//ONLY RENDER ONCE WHEN DATA IS RECEIVED 
+[data])
 
+
+//FUNCTION TO ADD A BOT TO YOUR ARMY 
    function handleAdd(e,botId) {
     e.preventDefault ;
    
